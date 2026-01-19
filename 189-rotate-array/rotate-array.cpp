@@ -1,24 +1,18 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        int n = nums.size();
-        k = k % n;  // In case k > n
+        int n=nums.size();
 
-        vector<int> temp(n);
+        k = k % n;
 
-        // Copy last k elements to beginning
-        for (int i = 0; i < k; i++) {
-            temp[i] = nums[n - k + i];
-        }
 
-        // Copy first n-k elements after that
-        for (int i = k; i < n; i++) {
-            temp[i] = nums[i - k];
-        }
+        reverse(nums.begin(),nums.end());
 
-        // Copy everything back to nums
-        for (int i = 0; i < n; i++) {
-            nums[i] = temp[i];
-        }
+        reverse(nums.begin(),nums.begin()+k);
+
+        reverse(nums.begin()+k,nums.end());
+
+    
+       
     }
 };
