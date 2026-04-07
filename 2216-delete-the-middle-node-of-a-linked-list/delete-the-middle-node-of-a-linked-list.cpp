@@ -27,7 +27,7 @@ public:
 
         slow->next=slow->next->next;
         ListNode*middle=slow->next;
-        
+      
             
             return head;
     }
